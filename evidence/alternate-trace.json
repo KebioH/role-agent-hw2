@@ -1,0 +1,317 @@
+{
+  "evidence_type": "RULE_BACKEND_REAL_SQLITE",
+  "live_llm": false,
+  "runs": [
+    {
+      "ok": true,
+      "reply": "已記住：週一九點，帶筆記本",
+      "trace": [
+        {
+          "event": "input",
+          "text": "記住 植物園導覽：週一九點，帶筆記本"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_put",
+            "args": {
+              "key": "植物園導覽",
+              "value": "週一九點，帶筆記本",
+              "source": "rule-ef2dc9dc849f"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_put",
+          "args": {
+            "key": "植物園導覽",
+            "value": "週一九點，帶筆記本",
+            "source": "rule-ef2dc9dc849f"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_put",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "植物園導覽",
+              "value": "週一九點，帶筆記本",
+              "source": "rule-ef2dc9dc849f",
+              "version": 1,
+              "updated": "2026-11-22T04:53:17.658369+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "已記住：週一九點，帶筆記本"
+        }
+      ]
+    },
+    {
+      "ok": true,
+      "reply": "週一九點，帶筆記本",
+      "trace": [
+        {
+          "event": "input",
+          "text": "查詢 植物園導覽"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "植物園導覽"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "植物園導覽"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "植物園導覽",
+              "value": "週一九點，帶筆記本",
+              "source": "rule-ef2dc9dc849f",
+              "version": 1,
+              "updated": "2026-11-22T04:53:17.658369+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "週一九點，帶筆記本"
+        }
+      ]
+    },
+    {
+      "ok": true,
+      "reply": "已更正：週二十點，帶水壺",
+      "trace": [
+        {
+          "event": "input",
+          "text": "更正 植物園導覽：週二十點，帶水壺"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "植物園導覽"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "植物園導覽"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "植物園導覽",
+              "value": "週一九點，帶筆記本",
+              "source": "rule-ef2dc9dc849f",
+              "version": 1,
+              "updated": "2026-11-22T04:53:17.658369+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "tool",
+            "name": "memory_correct",
+            "args": {
+              "key": "植物園導覽",
+              "value": "週二十點，帶水壺",
+              "source": "rule-e90c56504ef6",
+              "expected_version": 1
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_correct",
+          "args": {
+            "key": "植物園導覽",
+            "value": "週二十點，帶水壺",
+            "source": "rule-e90c56504ef6",
+            "expected_version": 1
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_correct",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "植物園導覽",
+              "value": "週二十點，帶水壺",
+              "source": "rule-e90c56504ef6",
+              "version": 2,
+              "updated": "2026-11-22T04:53:17.659202+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 3,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "已更正：週二十點，帶水壺"
+        }
+      ]
+    },
+    {
+      "ok": true,
+      "reply": "週二十點，帶水壺",
+      "trace": [
+        {
+          "event": "input",
+          "text": "查詢 植物園導覽"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "植物園導覽"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "植物園導覽"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "植物園導覽",
+              "value": "週二十點，帶水壺",
+              "source": "rule-e90c56504ef6",
+              "version": 2,
+              "updated": "2026-11-22T04:53:17.659202+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "週二十點，帶水壺"
+        }
+      ]
+    },
+    {
+      "ok": true,
+      "reply": "沒有這筆記憶。",
+      "trace": [
+        {
+          "event": "input",
+          "text": "查詢 植物園導覽未登錄"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "植物園導覽未登錄"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "植物園導覽未登錄"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": false,
+            "record": null
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "沒有這筆記憶。"
+        }
+      ]
+    }
+  ]
+}
