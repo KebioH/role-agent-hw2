@@ -1,0 +1,30 @@
+test_01_create_get (test_agent.CoreTests.test_01_create_get) ... ok
+test_02_restart_persistence (test_agent.CoreTests.test_02_restart_persistence) ... ok
+test_03_correction_retains_history (test_agent.CoreTests.test_03_correction_retains_history) ... ok
+test_04_stale_version_rejected (test_agent.CoreTests.test_04_stale_version_rejected) ... ok
+test_05_unknown_is_not_invented (test_agent.CoreTests.test_05_unknown_is_not_invented) ... ok
+test_06_role_isolation (test_agent.CoreTests.test_06_role_isolation) ... ok
+test_07_user_isolation (test_agent.CoreTests.test_07_user_isolation) ... ok
+test_08_duplicate_is_idempotent (test_agent.CoreTests.test_08_duplicate_is_idempotent) ... ok
+test_09_no_silent_overwrite (test_agent.CoreTests.test_09_no_silent_overwrite) ... ok
+test_10_invalid_scope (test_agent.CoreTests.test_10_invalid_scope) ... ok
+test_11_scope_injection_rejected (test_agent.CoreTests.test_11_scope_injection_rejected) ... ok
+test_12_search_literal (test_agent.CoreTests.test_12_search_literal) ... ok
+test_13_delete_requires_confirmation (test_agent.CoreTests.test_13_delete_requires_confirmation) ... ok
+test_14_delete_purges_history (test_agent.CoreTests.test_14_delete_purges_history) ... ok
+test_15_normalization (test_agent.CoreTests.test_15_normalization) ... ok
+test_16_bad_record (test_agent.CoreTests.test_16_bad_record) ... ok
+test_17_publish_requires_review (test_agent.CoreTests.test_17_publish_requires_review) ... ok
+test_18_versioned_publication (test_agent.CoreTests.test_18_versioned_publication) ... ok
+test_19_workflow_trace_fixture (test_agent.CoreTests.test_19_workflow_trace_fixture) ... ok
+test_20_bad_model_json (test_agent.CoreTests.test_20_bad_model_json) ... ok
+test_21_tool_step_limit (test_agent.CoreTests.test_21_tool_step_limit) ... ok
+test_22_unknown_tool_blocked (test_agent.CoreTests.test_22_unknown_tool_blocked) ... ok
+test_23_backend_failure (test_agent.CoreTests.test_23_backend_failure) ... ok
+test_24_error_observation_reaches_next_step (test_agent.CoreTests.test_24_error_observation_reaches_next_step) ... ok
+test_25_persona_tamper_detection (test_agent.CoreTests.test_25_persona_tamper_detection) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.157s
+
+OK

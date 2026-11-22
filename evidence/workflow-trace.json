@@ -1,0 +1,334 @@
+{
+  "evidence_type": "SCRIPTED_BACKEND_REAL_SQLITE",
+  "live_llm": false,
+  "scenarios": [
+    {
+      "scenario": "write",
+      "ok": true,
+      "reply": "好 週五展示 你擔心的是設備",
+      "trace": [
+        {
+          "event": "input",
+          "text": "幫我記住週五要展示 我最擔心設備出錯"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_put",
+            "args": {
+              "key": "presentation",
+              "value": "週五展示；擔心設備出錯",
+              "source": "synthetic-user-01"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_put",
+          "args": {
+            "key": "presentation",
+            "value": "週五展示；擔心設備出錯",
+            "source": "synthetic-user-01"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_put",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "presentation",
+              "value": "週五展示；擔心設備出錯",
+              "source": "synthetic-user-01",
+              "version": 1,
+              "updated": "2026-11-21T23:14:15.356975+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "好 週五展示 你擔心的是設備"
+        }
+      ]
+    },
+    {
+      "scenario": "recall",
+      "ok": true,
+      "reply": "週五 你最擔心設備出錯",
+      "trace": [
+        {
+          "event": "input",
+          "text": "我之前說展示是哪天 最擔心什麼"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "presentation"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "presentation"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "presentation",
+              "value": "週五展示；擔心設備出錯",
+              "source": "synthetic-user-01",
+              "version": 1,
+              "updated": "2026-11-21T23:14:15.356975+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "週五 你最擔心設備出錯"
+        }
+      ]
+    },
+    {
+      "scenario": "correct",
+      "ok": true,
+      "reply": "改成週六了",
+      "trace": [
+        {
+          "event": "input",
+          "text": "展示改週六了"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "presentation"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "presentation"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "presentation",
+              "value": "週五展示；擔心設備出錯",
+              "source": "synthetic-user-01",
+              "version": 1,
+              "updated": "2026-11-21T23:14:15.356975+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "tool",
+            "name": "memory_correct",
+            "args": {
+              "key": "presentation",
+              "value": "週六展示；擔心設備出錯",
+              "source": "synthetic-user-03",
+              "expected_version": 1
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_correct",
+          "args": {
+            "key": "presentation",
+            "value": "週六展示；擔心設備出錯",
+            "source": "synthetic-user-03",
+            "expected_version": 1
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_correct",
+          "result": {
+            "found": true,
+            "record": {
+              "user": "demo",
+              "role": "aria",
+              "key": "presentation",
+              "value": "週六展示；擔心設備出錯",
+              "source": "synthetic-user-03",
+              "version": 2,
+              "updated": "2026-11-21T23:14:15.357312+00:00"
+            }
+          }
+        },
+        {
+          "event": "decision",
+          "step": 3,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "改成週六了"
+        }
+      ]
+    },
+    {
+      "scenario": "unknown",
+      "ok": true,
+      "reply": "這個我沒有紀錄 你之前還沒告訴我",
+      "trace": [
+        {
+          "event": "input",
+          "text": "我沒說過的餐廳名字是什麼"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_get",
+            "args": {
+              "key": "restaurant"
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_get",
+          "args": {
+            "key": "restaurant"
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_get",
+          "result": {
+            "found": false,
+            "record": null
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "這個我沒有紀錄 你之前還沒告訴我"
+        }
+      ]
+    },
+    {
+      "scenario": "invalid_json",
+      "ok": false,
+      "reply": "目前無法完成，請稍後重試。",
+      "trace": [
+        {
+          "event": "input",
+          "text": "測試格式錯誤"
+        },
+        {
+          "event": "error",
+          "code": "INVALID_MODEL_JSON"
+        }
+      ]
+    },
+    {
+      "scenario": "stale_update",
+      "ok": true,
+      "reply": "版本衝突 先重新讀取再更正",
+      "trace": [
+        {
+          "event": "input",
+          "text": "測試舊版本更正"
+        },
+        {
+          "event": "decision",
+          "step": 1,
+          "action": {
+            "action": "tool",
+            "name": "memory_correct",
+            "args": {
+              "key": "presentation",
+              "value": "週日",
+              "source": "synthetic-user-06",
+              "expected_version": 1
+            }
+          }
+        },
+        {
+          "event": "tool_call",
+          "name": "memory_correct",
+          "args": {
+            "key": "presentation",
+            "value": "週日",
+            "source": "synthetic-user-06",
+            "expected_version": 1
+          }
+        },
+        {
+          "event": "observation",
+          "tool": "memory_correct",
+          "result": {
+            "error": "VERSION_CONFLICT"
+          }
+        },
+        {
+          "event": "decision",
+          "step": 2,
+          "action": {
+            "action": "finish"
+          }
+        },
+        {
+          "event": "final",
+          "text": "版本衝突 先重新讀取再更正"
+        }
+      ]
+    }
+  ]
+}

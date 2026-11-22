@@ -1,0 +1,16 @@
+[
+  {
+    "id": "89b9feee84be06ddae853f62b5e907f46c2eb074efa6a48e2e5d8fd11f46d3ec",
+    "speaker": "Aria",
+    "text": "你先說是哪一天",
+    "time": "2026-11-20T10:00:00+08:00",
+    "source": "synthetic-01"
+  },
+  {
+    "id": "b84476852a880064ed0538d63007fdbb32daa30f489883aae724c1f2695c5d9b",
+    "speaker": "Aria",
+    "text": "好 我記一下",
+    "time": "2026-11-20T10:02:00+08:00",
+    "source": "synthetic-01"
+  }
+]

@@ -1,0 +1,14 @@
+# Integration candidate. Must be built and checked with the target OpenClaw release.
+FROM docker.io/library/node:24-bookworm-slim
+ARG OPENCLAW_VERSION=2026.9.6
+RUN apt-get update && apt-get install -y --no-install-recommends python3 ca-certificates git && rm -rf /var/lib/apt/lists/*
+RUN npm install -g openclaw@${OPENCLAW_VERSION}
+WORKDIR /app
+COPY src/ src/
+COPY data/ data/
+COPY openclaw/ openclaw/
+ENV ROLE_DATA_DIR=/home/node/role-data
+USER node
+# Attach a separate demonstration state volume; do not overwrite your daily installation.
+ENTRYPOINT ["openclaw"]
+CMD ["gateway", "--port", "18789", "--bind", "lan"]

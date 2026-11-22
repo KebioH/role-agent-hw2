@@ -1,0 +1,7 @@
+[
+ {"sender":"Aria","text":"你先說是哪一天","time":"2026-11-20T10:00:00+08:00","source":"synthetic-01","type":"text"},
+ {"sender":"User","text":"週五要展示","time":"2026-11-20T10:01:00+08:00","source":"synthetic-01","type":"text"},
+ {"sender":"Aria","text":"好 我記一下","time":"2026-11-20T10:02:00+08:00","source":"synthetic-01","type":"text"},
+ {"sender":"Aria","text":"https://example.com","time":"2026-11-20T10:03:00+08:00","source":"synthetic-01","type":"share"},
+ {"sender":"Aria","text":"好 我記一下","time":"2026-11-20T10:02:00+08:00","source":"synthetic-01","type":"text"}
+]
